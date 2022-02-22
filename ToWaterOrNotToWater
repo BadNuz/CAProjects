@@ -1,0 +1,17 @@
+#include <iostream>
+
+// Define needs_water() here:
+std::string needs_water(int days, bool is_succulent){
+  std::string ReturnedValue = "Don't water the plant!";
+  if (!is_succulent && days > 3)
+    ReturnedValue = "Time to water the plant.";
+  else if (is_succulent && days >= 13)
+    ReturnedValue = "Go ahead and give the plant a little water.";
+  return ReturnedValue;
+}
+
+int main() {
+  
+  std::cout << needs_water(10, true) << "\n";
+  
+}
