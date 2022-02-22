@@ -1,8 +1,8 @@
 #include <iostream>
-
+using namespace std;
 // Define needs_water() here:
-std::string needs_water(int days, bool is_succulent){
-  std::string ReturnedValue = "Don't water the plant!";
+string needs_water(int days, bool is_succulent){
+  string ReturnedValue = "Don't water the plant!";
   if (!is_succulent && days > 3)
     ReturnedValue = "Time to water the plant.";
   else if (is_succulent && days >= 13)
@@ -11,7 +11,21 @@ std::string needs_water(int days, bool is_succulent){
 }
 
 int main() {
-  
-  std::cout << needs_water(10, true) << "\n";
+  cout << "Let's see if you need to water your plant.\n\n";
+  cout << "Is your plant a succulent? y/n\n";
+    string SuccInput = "Invalid Input.";
+    bool SuccStat;
+    cin >> SuccInput;
+      if (SuccInput == "y")
+        SuccStat = true;
+      else if (SuccInput == "n")
+        SuccStat = false;
+      else
+        cout << "Invalid input, please reenter.\n";
+  cout << "How many days since you last watered your plant?\n";
+  cout << "Please enter days here: ";
+    int DayInput;
+    cin >> DayInput;
+  cout << needs_water(DayInput, SuccStat) << "\n";
   
 }
